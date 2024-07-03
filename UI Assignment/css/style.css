@@ -64,14 +64,11 @@ select.border-none {
 
 .landing-intro {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0px 2rem;
 }
 
-.intro-para {
-    padding: 0px 2rem;
-}
 
 .intro-head {
     font-size: 3.25rem; 
@@ -171,7 +168,7 @@ span.above-img {
     padding: 0;
     position: absolute;
     top: 0;
-    left: 50px;
+    left: 0;
 }
 
 span.below-img {
@@ -179,7 +176,7 @@ span.below-img {
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 50px;
+    right: 0;
     bottom: 0;
     z-index: 1;
 }
@@ -196,17 +193,22 @@ span.center-img {
 span.above-img>img {
     max-width: 238px;
     max-height: 103px;
+    width:100%;
+    margin:0;
 }
 
 span.below-img>img {
     max-width: 75px;
     max-height: 70px;
+    width:100%;
+    margin:0;
 }
 
 span.center-img>img {
     max-width: 66px;
     max-height: 66px;
-
+    width: 100px;
+    margin:0;
 }
 
 .tron-content {
@@ -427,8 +429,6 @@ span.center-img>img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 0px 2rem;
 }
 
 .blog-card {
@@ -522,34 +522,45 @@ span.center-img>img {
     background: #FAFBFC;
 
 }
-.head-section{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+.head-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin:0px 2rem;
+    margin: 0px 2rem;
 }
-.contact-section .search-box{
-    width:510px;
+
+.contact-section .search-box {
+    width: 100%;
+    max-width: 510px;
+    height: 100%;
     max-height: 46px;
-   height: 100%;
 }
-.statuses{
-display: flex;
-flex-direction: row;
-justify-content: space-between;  
-flex-wrap: wrap;
-margin:3rem 0px;;
+
+.statuses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    margin: 3rem 0px;
 }
-.status-icon{
-    margin:0px 0.5rem;
+
+.status-icon {
+    margin: 0px 0.5rem;
 }
-.status{
+
+.status {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    margin: 0.5rem;
+    flex: 1 1 calc(25 - 1rem);
+    max-width: calc(25 - 1rem); 
 }
+
+
 .footer{
     padding: 2rem 5rem;
     background: #151B28;
@@ -629,8 +640,30 @@ margin:3rem 0px;;
         width: 100%;
     }
 
+    .landing-intro {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: auto;;
+    }
+
     .landing-comps {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+    .card {
         margin: 0;
+        display: inline-block;
+        max-width: 15.1875rem;
+        max-height: 15.1875rem;
+        padding: 2.5625rem 0;
+        box-shadow: 0 0.0625rem 0.125rem 0 #1018280A;
+        background-color: #ffffff;
+        border-radius: 0.625rem;
+        border: none;
     }
 
     .intro-para {
@@ -638,11 +671,7 @@ margin:3rem 0px;;
         margin-left: 0;
     }
 
-    .landing-intro {
-        flex-direction: column-reverse;
-        justify-content: left;
-    }
-
+  
     nav .main {
         width: 100%;
         margin: 0;
@@ -656,12 +685,12 @@ margin:3rem 0px;;
 
     span.above-img {
         top: 0;
-        left: 0;
+        left:-50px;
     }
 
     span.below-img {
         bottom: 0;
-        right: 0;
+        right: -50px;
     }
 
     span.center-img {
@@ -743,6 +772,7 @@ margin:3rem 0px;;
         width: 704px;
         height: 460px;
         margin:0;
+        width:100%;
     }
     
     .products .details-2 {
@@ -764,19 +794,17 @@ margin:3rem 0px;;
     }
     .blog{
         padding: 2.5rem 2rem;
-        padding:0;
         margin:0;
     }
     .blog-cards {
        padding:0;
        margin:0;
-       width:100%;
     }
     
     .blog-card-aside {
         display: flex;
         flex-direction: row;
-        margin-right:1rem; ;
+
     }
     
     .blog-aside-para {
@@ -794,12 +822,14 @@ margin:3rem 0px;;
     .blog-img{
         width: 704px;
         height: 163px;   
+       
     }
     .blog-img-aside{
 
         max-width: 188px;
         max-height: 166px;
         margin-right: 1.5rem;
+        width:100%;
     }
     .collabs{
         display:none;
@@ -826,26 +856,23 @@ margin:3rem 0px;;
 
 
     .intro-para {
+        margin:auto;
         padding: 1rem;
-        width: 100%;
         margin-left: 0;
     }
 
-    .landing-intro {
-        flex-direction: column-reverse;
-        justify-content: left;
-        align-items: flex-start;
-        padding: 0;
-    }
+
+ 
     .search-box {
-        width: 80%;
-        max-width: 21.4375rem; /* 343px / 16px */
-        height: 2.875rem; /* 46px / 16px */
+        max-width: 90%;
+        height: 2.875rem; /* 46px */
         border-radius: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        padding: 0 1rem; /* Optional: add padding for consistent spacing */
     }
     
     .search {
@@ -862,19 +889,33 @@ margin:3rem 0px;;
         width: auto;
         margin-bottom: 1rem; /* Adjusted margin-bottom */
     }
-    
+    .landing-intro {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin:auto;
+    }
+    .landing-comps {
+        margin:auto;
+        display: flex;
+    }
+
     .card {
         display: inline-block;
-        width: 9.3rem;
-        height: 9.3rem;
+        max-width: 9.3rem;
+        max-height: 9.3rem;
         padding: 1.47rem 0;
         border-radius: 0.38rem 0 0 0;
+        width:100%;
     }
 
     .card-img-top {
         max-width: 1.99rem;
         max-height: 1.99rem;
         margin: 0 3.66rem 0.92rem;
+        width:100%;
     }
 
     .card-title {
@@ -903,32 +944,38 @@ margin:3rem 0px;;
     }
 
     span.above-img>img {
-        max-width: 146px;
-        max-height: 68px;
+        width: 146px;
+        height: 68px;
         margin: 0;
+        width:100%;
     }
 
     span.below-img>img {
-        max-width: 46px;
-        max-height: 42px;
+        width: 46px;
+        height: 42px;
         margin: 0;
+        width:100%;
     }
 
     span.center-img>img {
-        max-width: 40px;
-        max-height: 40px;
+        width: 40px;
+        height: 40px;
         margin: 0;
+        width:100%;
     }
 
     span.above-img {
         top: 0;
-        left: 10px;
-
+        left:0;
+        max-width: 146px;
+        max-height: 68px;
     }
 
     span.below-img {
         bottom: 0;
-        right: 10%
+        right: 0;
+        max-width: 46px;
+        max-height: 42px;
     }
 
     span.center-img {
@@ -963,12 +1010,12 @@ margin:3rem 0px;;
     .product-img{
         width:342px;
         height:342px;
-
+        width:100%;
     }
     .left-img{
         max-width:342px;
         max-height:342px;
-        width:100%;
+
     }
     .products {
         margin:0;
@@ -1010,7 +1057,7 @@ margin:3rem 0px;;
     .blog-img{
         width: 343px;
         height:185px;
-
+        width: 100%;
     }
     .blog-aside-para {
         display: block;
@@ -1062,4 +1109,5 @@ margin:3rem 0px;;
         align-items: center;
         margin-top: 2rem; /* Example spacing between .footer-bottom and .footer-content */
     }
+ 
 }
